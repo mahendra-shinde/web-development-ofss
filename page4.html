@@ -3,13 +3,34 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <style>
+        table {
+            border-top: 2pt solid gray;
+            border-bottom: 3pt solid black;
+        }
+        td.middle{
+            border-left: 1px dotted black;
+            border-right: 1px dotted black;
+        }
+        thead{
+            background-color: cadetblue;
+        }
+        tfoot{
+            background-color: azure;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: small;
+        }
+        tbody td {
+            border-bottom: 1px dashed black;   
+        }
+    </style>
     <title>Page 4</title>
 </head>
 <body>
     <h2>Interest Rates on Loans</h2>
     
     <h3>Basic Layout</h3>
-    <table border="1" cellspacing="0" cellpadding="10">
+    <table border="0" cellspacing="0" cellpadding="10">
         <tr>
             <td>Loan Type</td>
             <td>Amount Range</td>
@@ -17,17 +38,17 @@
         </tr>
         <tr>
             <td>Home Loans</td>
-            <td>Upto 30,00,000</td>
+            <td class="middle">Upto 30,00,000</td>
             <td>9</td>
         </tr>
         <tr>
             <td>Home Loans</td>
-            <td>Upto 70,00,000</td>
+            <td class="middle">Upto 70,00,000</td>
             <td>8.5</td>
         </tr>
         <tr>
             <td>Home Loans</td>
-            <td>70,00,001 to 1,00,00,000</td>
+            <td class="middle">70,00,001 to 1,00,00,000</td>
             <td>10.05</td>
         </tr>
         <tr>
@@ -36,7 +57,7 @@
     </table>
 
     <h3>Standard Layout</h3>
-    <table border="1" cellspacing="0" cellpadding="5">
+    <table border="0" cellspacing="0" cellpadding="5">
         <thead>
         <tr>
             <th>Loan Type</th>
@@ -70,7 +91,7 @@
 
     
     <h3>Standard Layout with RowSpan</h3>
-    <table border="1" cellspacing="0" cellpadding="5">
+    <table border="0" cellspacing="0" cellpadding="5">
         <thead>
         <tr>
             <th>Loan Type</th>

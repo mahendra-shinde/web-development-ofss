@@ -32,4 +32,24 @@
     
     Simple : table -> tr -> td
 
-    Standard : table -> thead, tbody & tfooter -> tr -> td
+    Standard : table -> thead, tbody & tfoot -> tr -> td
+
+4.  HTML Forms
+
+    > User Input Fields
+
+
+    Field Type | Tag Used
+    -----------|---------
+    TEXT    | `<input type="text">` or `<input>`
+    Checkbox | `<input type="checkbox" name="chkfield" value="Value1">`
+    Radio | `<input type="radio" name="rdfield" value="Value1">`
+    Button | `<input type="button" >`
+    Submit Button | `<input type="submit">`
+    Reset Button | `<input type="reset"> `
+
+> Submit Button
+
+1.  If validation is ENABLED, then performs Validation.
+2.  Collects all Values and Names from all INPUT tags inside form.
+3.  Read "METHOD" type and either SEND all parameter in URL (GET) or in Request Body (POST)

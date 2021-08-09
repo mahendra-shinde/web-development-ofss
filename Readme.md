@@ -28,4 +28,8 @@
 
 2. Lists: Ordered, Unorderd and Definition List
 
+3. HTML Table
+    
+    Simple : table -> tr -> td
 
+    Standard : table -> thead, tbody & tfooter -> tr -> td

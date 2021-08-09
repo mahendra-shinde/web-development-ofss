@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8'>
+    <link type="text/css" rel="stylesheet" href="style1.css"/>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Form Page</title>
     
@@ -16,7 +17,8 @@
     <h3>Developer Registration</h3>
     <!-- Form with NO-ACTION, send to self -->
     <form method="GET" >
-        Name: <input name="firstname" size="35" /><input name="lastname" size="35" /><br/>
+        Name: <input type="text" name="firstname" size="35" class="text" />
+        <input name="lastname" type="text" size="35" /><br/>
         Gender: <input type="radio" name="gender" value="male"/>Male
         <input type="radio" name="gender" value="female"/>Female<br/>
         Programming Languages: <input type="checkbox" name="langs" value="C"/> C Lang

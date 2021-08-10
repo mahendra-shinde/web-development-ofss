@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Object Demo</title>
+    <script>
+    // Constructor Function
+    function Account(accNo, holderName, openingDate, balance){
+        this.accNo = accNo;
+        this.holderName = holderName;
+        this.openingDate = openingDate;
+        this.balance = balance;
+    }
+
+    var a1 = new Account(10001, "Jeetendar","2010-03-01",12000);
+    //JSON Objects
+    var a2 = {
+            accNo: "10002",
+            holderName: "Dharmendra",
+            balance: 12990,
+            openingDate: "2001-01-01"
+        }
+    </script>
+</head>
+<body>
+    <h2>Account Details: </h2>
+    Account Holder Name: <span id="accname" ></span><br/>
+    Account Number : <span id="accno"></span><br/>
+    Initial Balance : <span id="bal"></span> <br/>
+    Account Opening Date : <span id="dt" ></span><br/>
+
+    <script>
+        document.getElementById("accname").innerHTML = a2.holderName;
+        document.getElementById("accno").innerHTML = a2.accNo;
+        document.getElementById("bal").innerHTML = a2.balance;
+        document.getElementById("dt").innerHTML = a2.openingDate;
+    </script>
+</body>
+</html>

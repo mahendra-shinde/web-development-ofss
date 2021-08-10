@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax with Plain Javascript</title>
+    <script>
+        var req =new XMLHttpRequest();
+        window.onload = function(){         
+            
+            document.getElementById("loadBtn").onclick = function(){
+             req.open('GET','https://jsonplaceholder.typicode.com/todos');   
+             req.onreadystatechange = processResponse;
+             req.send();
+            }
+        }
+        function processResponse(){
+            if(req.readyState == 4 && req.status == 200){
+                console.log("Data Received ");
+                console.log(req.responseText);
+                var listTask = JSON.parse(req.responseText);
+                for(i=0;i<listTask.length; i++){
+                var row = convertToRow(listTask[i]);
+                document.getElementById("data").innerHTML += row;
+                }
+            }else if( req.status != 200 ){
+                console.log("ERROR "+req.status);
+            }
+        }
+        function convertToRow(task){
+            return "<tr><td>"+task.userId+"</td><td>"+task.id+"</td><td>"+task.title+"</td><td>"+task.completed+"</td></tr>";
+        }
+    </script>
+</head>
+<body>
+    <h2>Ajax Demo</h2>
+    <a href="#" id="loadBtn">Load Data</a>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Task ID</th>
+                <th>Task Details</th>
+                <th>Task Status</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+
+        </tbody>
+    </table>
+</body>
+</html>

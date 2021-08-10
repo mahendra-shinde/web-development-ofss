@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ajax with jQuery</title>
+    <script src="jquery-3.6.0.js"> 
+    </script>
+    
+    
+</head>
+<body>
+    <h2>Ajax Demo</h2>
+    <button id="loadBtn">Load Data</button>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Task ID</th>
+                <th>Task Details</th>
+                <th>Task Status</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+
+        </tbody>
+    </table>
+</body>
+<script>
+    window.onload = function(){
+        $("#loadBtn").click(function(){
+            console.log("Link Clicked");
+            $.getJSON('https://jsonplaceholder.typicode.com/todos',function(result){
+                //processResponse(result);
+                console.log("Getting Response");
+                $.each(result, function(i,task){
+                    $("#data").append(convertToRow(task));    
+                });
+            });
+        });
+    }
+    
+    function convertToRow(task){
+        return "<tr><td>"+task.userId+"</td><td>"+task.id+"</td><td>"+task.title+"</td><td>"+task.completed+"</td></tr>";
+    }
+</script>
+</html>

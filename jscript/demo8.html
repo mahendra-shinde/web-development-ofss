@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script src='jquery-3.6.0.js'>
+
+    </script>
+    <script>
+        window.onload = function(){
+            $("tbody>tr").hover(function(){
+                this.style.backgroundColor = 'lightblue'   ; 
+            },function(){
+                this.style.backgroundColor = 'white'   ;
+            })
+        }
+    </script>
+</head>
+<body>
+    <h3>Loan Report</h3>
+    <table border="0" cellspacing="0" cellpadding="5" style="border-radius: 5px;">
+        <thead>
+        <tr>
+            <th>Loan Type</th>
+            <th>Amount Range</th>
+            <th>Rate of Interest</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="3">Home Loans</td>
+            <td>Upto 30,00,000</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            
+            <td>Upto 70,00,000</td>
+            <td>8.5</td>
+        </tr>
+        <tr>
+            
+            <td>70,00,001 to 1,00,00,000</td>
+            <td>10.05</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th colspan="3">Rates would be updated in each year</th>
+        </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

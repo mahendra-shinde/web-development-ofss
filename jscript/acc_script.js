@@ -24,6 +24,8 @@ function convertToRow(acc){
     return str;
 }
 //After Document (DOM) is Loaded
+//Assigning a new "nameless" function 
 window.onload = function(){
+    //Register for "click" eveny
     document.getElementById("btn1").onclick = addAccount ;
 }

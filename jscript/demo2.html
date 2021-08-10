@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FORM with JavaScript</title>
+</head>
+<body>
+    <form>
+        Enter 1st number : <input type="number" id="n1" /><br/>
+        Enter 2nd number : <input type="number" id="n2" /><br/>
+        Sum : <input type="text" id="ans" readonly/><br/>
+        <input type="button" value="calc" id="btn1"/>
+    </form>
+</body>
+    <script type="text/javascript">
+    
+    document.getElementById("btn1").onclick = doSum ;
+    function doSum(){
+        n1 = document.getElementById("n1").value;
+        n2 = document.getElementById("n2").value;
+        ans = parseInt(n1) + parseInt(n2);
+        document.getElementById("ans").value = ans;        
+    }
+    </script>
+</html>

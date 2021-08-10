@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript For Loop</title>
+    <script>
+        // JSON Syntax for an Array
+        var names = [ 'Mahendra', 'Devendra', 'Narendra', 'Dharmendra', 'Surendra' ];
+
+        // Programmatic Array Creation
+        var countries = new Array(4);
+        countries[0] = "India";
+        countries[1] = "United Kingdom";
+        countries[2] = "Australia";
+        countries[3] = "Shri Lanka";
+
+        function addName(){
+            clearTable();
+            var data = "";
+            for(i = 0; i<names.length; i++){
+                data += "<tr><td>"+ names[i]  +"</td></tr>" ;
+                console.log(data);
+            }
+            document.getElementById("t1").innerHTML = data;
+        }
+        function addCountries(){
+            clearTable();
+            var data = "";
+            var i =0 ; 
+            while( i<countries.length ){
+                data += "<tr><td>"+ countries[i]  +"</td></tr>" ;
+                console.log(data);
+                i++;
+            }
+            document.getElementById("t1").innerHTML = data;
+        }
+        function clearTable(){
+            document.getElementById('t1').innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1" >Load Names</button>
+    <button id="btn2" >Load Countries </button>
+    <table id="t1" >
+        
+    </table>
+    <script>
+        document.getElementById("btn1").onclick=addName ;
+        document.getElementById("btn2").onclick=addCountries ;
+    </script>
+</body>
+</html>

@@ -8,11 +8,12 @@
         Enter 1st number : <input type="number" id="n1" /><br/>
         Enter 2nd number : <input type="number" id="n2" /><br/>
         Sum : <input type="text" id="ans" readonly/><br/>
-        <input type="button" value="calc" id="btn1"/>
+        <input type="button" value="calc" id="btn1" />
     </form>
 </body>
     <script type="text/javascript">
-    
+    //set the CALLBACK function
+    // invoke doSum on event 'onclick'
     document.getElementById("btn1").onclick = doSum ;
     function doSum(){
         n1 = document.getElementById("n1").value;

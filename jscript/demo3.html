@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FORM with JavaScript</title>
+</head>
+<body>
+    <form>
+        Enter 1st number : <input type="number" id="n1" /><br/>
+        Enter 2nd number : <input type="number" id="n2" /><br/>
+        Operation : <input type="radio" name="opr" value="sum">Addition
+                    <input type="radio" name="opr" value="sub">Subtraction
+                    <input type="radio" name="opr" value="div">Division
+                    <input type="radio" name="opr" value="mul">Multiplication
+                    <br/>
+
+        Answer : <input type="text" id="ans" readonly/><br/>
+        <input type="button" value="calc" id="btn1" />
+    </form>
+</body>
+    <script type="text/javascript">
+    //set the CALLBACK function
+    // invoke doSum on event 'onclick'
+    document.getElementById("btn1").onclick = doSum ;
+    function doSum(){
+        n1 = document.getElementById("n1").value;
+        n2 = document.getElementById("n2").value;
+        //Radio buttons are created with NAME attribute
+        opr = document.forms[0].elements["opr"].value;
+        console.log("Operator selected: "+opr);
+        // Can be also done with switch case !
+        if(opr == "sum"){
+            ans = parseFloat(n1) + parseFloat(n2);
+        }else if(opr == "sub"){
+            ans = parseFloat(n1) - parseFloat(n2);
+        }else if(opr == "div"){
+            ans = parseFloat(n1) / parseFloat(n2);
+        }else if(opr == "mul"){
+            ans = parseFloat(n1) * parseFloat(n2);
+        }
+
+        document.getElementById("ans").value = ans;        
+    }
+    </script>
+</html>

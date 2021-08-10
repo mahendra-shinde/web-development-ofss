@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Account Report</title>
+    <script>
+    // Constructor Function
+    function Account(accNo, holderName, openingDate, balance){
+        this.accNo = accNo;
+        this.holderName = holderName;
+        this.openingDate = openingDate;
+        this.balance = balance;
+    }
+    
+    function addAccount(){
+        var frm1 = document.forms["frm1"];
+        account = new Account(frm1.accno.value, frm1.accname.value, frm1.dtopen.value, frm1.amt.value);
+        console.log(account);
+        var row = convertToRow(account);
+        document.getElementById("data").innerHTML += row;
+        return account;
+    }
+
+    function convertToRow(acc){
+        var str ="<tr><td>";
+        str += acc.accNo + "</td><td>";
+        str += acc.holderName + "</td><td>";
+        str += acc.openingDate + "</td><td>";
+        str += acc.balance +"</td></tr>";
+        return str;
+    }
+    </script>
+</head>
+<body>
+    <form id="frm1">
+        <table>
+        <tr>
+            <td>Account Number </td><td> <input type="text" id="accno"/> </td>
+        </tr>
+        <tr>
+            <td>Account Holder name </td><td> <input type="text" id="accname"/> </td>
+        </tr>
+        <tr>
+            <td>Date of Opening </td><td> <input type="date" id="dtopen"/> </td>
+        </tr>
+        <tr>
+            <td>Initial Balance </td><td> <input type="number" id="amt"/> </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" id="btn1" value="Add" onclick="addAccount()"></td>
+        </tr>
+        </table>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Account Number</th>
+                <th>Holder Name</th>
+                <th>Opening Date</th>
+                <th>Initial Balance</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" id="footer"></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
